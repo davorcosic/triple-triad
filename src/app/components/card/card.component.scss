@@ -1,0 +1,41 @@
+// 411 x 534 height/width ratio = 1.3
+// border size: 24px top bottom, 14px left right
+// number size: 67px
+
+*,
+*::before *::after {
+  box-sizing: border-box;
+}
+
+:host {
+  --tt-ratio: 1;
+
+  --card-size-width: calc(10rem * var(--tt-ratio));
+  --card-size-height: calc(13rem * var(--tt-ratio));
+  --card-size-border: calc(0.5rem * var(--tt-ratio));
+  --card-size-font: calc(2.5rem * var(--tt-ratio));
+
+  --card-clr-bg: lightblue;
+  --card-clr-border: gold;
+}
+
+.card {
+  background: var(--card-clr-bg);
+  border: var(--card-size-border) solid var(--card-clr-border);
+  width: var(--card-size-width);
+  height: var(--card-size-height);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card-numbers {
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  font-size: var(--card-size-font);
+  font-weight: 700;
+  line-height: 0.75;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
